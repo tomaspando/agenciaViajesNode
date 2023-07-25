@@ -1,0 +1,71 @@
+--NODE JS--
+
+-Es un entorno de codigo abierto, multi-plataforma que permite crear aplicaciones del lado del servido en Js. 
+
+-Permite crear APIS, apps web e incluso acceder a archivos, leer sus contenidos, realizar pagos, autenticas usuario, acceder a una base de datos, etc. 
+
+-Ventajas: Su velocidad y rendimiento, Node fue pensado para solucionar estos problemas, además es excelente para apps en tiempo real. Otra entaja: Js: Si ya tenes experiencia en Js, ahora podes crear apps FULLSTACK con Node sin necesidad de compiladores ni lenguajes extras.
+
+-NPM: Node Package Manager: una gran cantidad de paquetes y librerías de código abierta ya listos, entre ellos: subida de archivo, autenticación, enviar emails, template engines, seguridad y mucho más. 
+
+-Instalar paquetes de NPM: npm install NOMBREPAQUETE. 
+
+-Existen dos TIPOS DE DEPENDENCIAS: 
+
+    -Las que son de Desarrollo: que solo requerimos mientras estamos creando el proyecto. 
+
+    -Las de Producción: Las que se necesitan cuando el proyecto está publicado. Si se requiere en el servidor donde publicaremos el proyecto. 
+
+--EXPRESS--
+
+-Es el Framework web más popular de Node, y es la herramienta sobre la que están desarrollados otros Frameworks como Mean, Sails, Loopback, GraphHql, Yoga etc. 
+
+-Soporta los diferentes verbos HTTP: Post, get, put, patch, delete en las rutas. 
+
+-Soporta Vistas, que son los datos mostrados en la pantalla mediante determinadas respuestas. 
+
+-Permite la creacion de apps MVC (Movil view controller) que permiten tener una separación de código y mejor orden. 
+
+-Soporta a Middleware, mediante peticiones que se ejecutan en la tuberia de la peticion. 
+
+-MiddleWare Express: Permite acceder a archivos, revisar si un usuario esta autenticado o no, entre otras cosas. 
+
+-El MiddleWare se ejecuta en pila, por lo tanto se ejecuta uno y despues el otro. En algunos casos lo creamos nosotros (similar a crear nuestras propias funciones) o tambien esta disponible en Express una gran cantidad de MiddleWares. 
+
+-Desventajas de Express: A diferencia de otros Frameworks, no viene con baterias incluidas: como puede ser autenticacion, roles, ORM o generador de modelos, esta piezas usualmente se instalan via NPM. Así solo instalamos lo que necesitamos.  
+
+-Si queremos mostrar un respuesta en HTML, tenemos que agregar una vista: Template Engine: Son la V del MVC. Permiten mostrar la parte visual (el HTML) en una app Express, debido a que el modelo retorna un objeto (o array) de datos, un template engine permitira acceder a los resultados de una consulta y mostrarlos en pantalla. 
+
+-Caracteristicas de un template engine: 
+
+    -Gran variedad y cada uno tiene su propia sintaxis. 
+
+    -Podemos escribir codigo JS dentro del HTML. 
+
+    -Con Experiencia en Angular, React o Vue, estos reemplazan estos template engines en una app. 
+
+-Los más comunes: 
+
+    -PUG: (Antes Jade)
+    -EJS: Embedded Javascript
+    -HBS: Handlebars.js (Mustache.js)
+    -React: Muy similar a la sintaxis de ReactJs. 
+
+-Se instala via NPM: npm install pug.
+-Lo habilitamos en el archivo principal con: app.set("view engine","pug")
+
+--Model View Controller (MVC)--
+
+-Es un patron de diseño en software que permite la separación de obligaciones de cada pieza de código en tu app web. 
+
+-Enfatiza la separacion de la logica de programacion y lo que se muestra en pantalla. Esto lo hace principalmente en el controlador con los datos que se la pasan hacia la vista. 
+
+-Model: Es el encargador de los datos(desde una BD) y de la logica para mostrar esos datos. 
+    Ejemplo: Un usuario quiere ver la seccion de productos, el modelo se encargara de realizar esa consulta a la base de datos. 
+
+-Vista: Se encarga de lo que pasa en pantalla, del HTML. 
+    Ejemplo: Si el modelo hace la consulta a la BD para los productos, es la vista la que muestra esos resultados. 
+
+-Controlador: El que se comunica entre el modelo y la vista, antes de que el modelo consulte a la BD es el encargado de mandarlo llamar y tambien una vez que el modelo tiene los resultados de la consulta, es el que se encarga de pasarlos a la vista. 
+
+-Router: Es el encargado de registrar todas las URL o endpoints que nuestra app soporta. Si el usuario accede a /productos, el router llama un controlador, que se comunica con el modelo para obtener los datos que son pasados hacia la vista para ser mostrados. 
